@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://ppaet.github.io/blog/docker%E5%AE%89%E8%A3%85redis-6-2-14.html</loc>
+    <loc>https://ppaet.github.io/docker%E5%AE%89%E8%A3%85redis-6-2-14.html</loc>
     
     <lastmod>2025-08-11</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://ppaet.github.io/blog/docker%E5%AE%89%E8%A3%85nginx.html</loc>
+    <loc>https://ppaet.github.io/docker%E5%AE%89%E8%A3%85nginx.html</loc>
     
     <lastmod>2025-08-11</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://ppaet.github.io/blog/about/index.html</loc>
+    <loc>https://ppaet.github.io/about/index.html</loc>
     
     <lastmod>2025-08-11</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://ppaet.github.io/blog/hello-world.html</loc>
+    <loc>https://ppaet.github.io/hello-world.html</loc>
     
     <lastmod>2025-08-11</lastmod>
     
@@ -39,7 +39,7 @@
   
 
   <url>
-    <loc>https://ppaet.github.io/blog</loc>
+    <loc>https://ppaet.github.io/</loc>
     <lastmod>2025-08-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -47,14 +47,14 @@
 
   
   <url>
-    <loc>https://ppaet.github.io/blog/tags/nginx/</loc>
+    <loc>https://ppaet.github.io/tags/nginx/</loc>
     <lastmod>2025-08-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://ppaet.github.io/blog/tags/redis/</loc>
+    <loc>https://ppaet.github.io/tags/redis/</loc>
     <lastmod>2025-08-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -63,7 +63,7 @@
 
   
   <url>
-    <loc>https://ppaet.github.io/blog/categories/%E8%BF%90%E7%BB%B4/</loc>
+    <loc>https://ppaet.github.io/categories/%E8%BF%90%E7%BB%B4/</loc>
     <lastmod>2025-08-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
