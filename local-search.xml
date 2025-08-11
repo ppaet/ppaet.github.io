@@ -15,12 +15,16 @@
       
       <category>运维</category>
       
+      <category>docker</category>
+      
     </categories>
     
     
     <tags>
       
       <tag>redis</tag>
+      
+      <tag>docker</tag>
       
     </tags>
     
@@ -40,12 +44,16 @@
       
       <category>运维</category>
       
+      <category>docker</category>
+      
     </categories>
     
     
     <tags>
       
       <tag>nginx</tag>
+      
+      <tag>docker</tag>
       
     </tags>
     

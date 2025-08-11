@@ -1,8 +1,10 @@
-https://ppaet.github.io/docker%E5%AE%89%E8%A3%85redis-6-2-14.html
 https://ppaet.github.io/docker%E5%AE%89%E8%A3%85nginx.html
+https://ppaet.github.io/docker%E5%AE%89%E8%A3%85redis-6-2-14.html
 https://ppaet.github.io/about/index.html
 https://ppaet.github.io/hello-world.html
 https://ppaet.github.io/
 https://ppaet.github.io/tags/nginx/
 https://ppaet.github.io/tags/redis/
+https://ppaet.github.io/tags/docker/
 https://ppaet.github.io/categories/%E8%BF%90%E7%BB%B4/
+https://ppaet.github.io/categories/%E8%BF%90%E7%BB%B4/docker/
