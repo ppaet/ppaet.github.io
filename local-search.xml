@@ -5,8 +5,8 @@
   
   <entry>
     <title>docker安装redis:6.2.14</title>
-    <link href="/project/docker%E5%AE%89%E8%A3%85redis-6-2-14.html"/>
-    <url>/project/docker%E5%AE%89%E8%A3%85redis-6-2-14.html</url>
+    <link href="/blog/docker%E5%AE%89%E8%A3%85redis-6-2-14.html"/>
+    <url>/blog/docker%E5%AE%89%E8%A3%85redis-6-2-14.html</url>
     
     <content type="html"><![CDATA[<h1 id="拉取redis镜像"><a href="#拉取redis镜像" class="headerlink" title="拉取redis镜像"></a>拉取redis镜像</h1><p>docker pull redis:6.2.14  </p><h1 id="创建挂载目录"><a href="#创建挂载目录" class="headerlink" title="创建挂载目录"></a>创建挂载目录</h1><p>sudo mkdir &#x2F;docker-data&#x2F;redis  </p><h1 id="下载redis-conf文件"><a href="#下载redis-conf文件" class="headerlink" title="下载redis.conf文件"></a>下载redis.conf文件</h1><p>cd &#x2F;docker-data&#x2F;redis<br>sudo wget <a href="https://raw.githubusercontent.com/redis/redis/6.2.14/redis.conf">https://raw.githubusercontent.com/redis/redis/6.2.14/redis.conf</a></p><h1 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h1><p>chmod 777 redis.conf  </p><h1 id="修改默认配置信息"><a href="#修改默认配置信息" class="headerlink" title="修改默认配置信息"></a>修改默认配置信息</h1><p>sudo vi &#x2F;docker-data&#x2F;redis&#x2F;redis.conf<br>bind 127.0.0.1 # 这行要注释掉，解除本地连接限制<br>protected-mode no # 默认yes，如果设置为yes，则只允许在本机的回环连接，其他机器无法连接。<br>daemonize no # 默认no 为不守护进程模式，docker部署不需要改为yes，docker run -d本身就是后台启动，不然会冲突<br>requirepass 123456 # 设置密码<br>appendonly yes # 持久化  </p><h1 id="docker启动redis"><a href="#docker启动redis" class="headerlink" title="docker启动redis"></a>docker启动redis</h1><p>docker run –name redis \<br>-p 6379:6379 \<br>-v &#x2F;docker-data&#x2F;redis&#x2F;redis.conf:&#x2F;etc&#x2F;redis&#x2F;redis.conf \<br>-v &#x2F;docker-data&#x2F;redis:&#x2F;data \<br>-d redis:6.2.14 redis-server &#x2F;etc&#x2F;redis&#x2F;redis.conf –appendonly yes  </p><h2 id="说明："><a href="#说明：" class="headerlink" title="说明："></a>说明：</h2><p>-p 6379:6379：端口映射，前面是宿主机，后面是容器。<br>–name redis：指定该容器名称。<br>-v 挂载文件或目录：前面是宿主机，后面是容器。<br>-d redis redis-server &#x2F;etc&#x2F;redis&#x2F;redis.conf：表示后台启动redis，以配置文件启动redis，加载容器内的conf文件。<br>appendonly yes：开启redis 持久化。  </p><h1 id="查看运行状态"><a href="#查看运行状态" class="headerlink" title="查看运行状态"></a>查看运行状态</h1><p>docker logs redis  </p>]]></content>
     
@@ -30,8 +30,8 @@
   
   <entry>
     <title>docker安装nginx</title>
-    <link href="/project/docker%E5%AE%89%E8%A3%85nginx.html"/>
-    <url>/project/docker%E5%AE%89%E8%A3%85nginx.html</url>
+    <link href="/blog/docker%E5%AE%89%E8%A3%85nginx.html"/>
+    <url>/blog/docker%E5%AE%89%E8%A3%85nginx.html</url>
     
     <content type="html"><![CDATA[<p>docker run <br>-p 80:80 -p 443:443 <br>–name nginx <br>-v &#x2F;docker-data&#x2F;nginx&#x2F;conf&#x2F;nginx.conf:&#x2F;etc&#x2F;nginx&#x2F;nginx.conf <br>-v &#x2F;docker-data&#x2F;nginx&#x2F;conf&#x2F;conf.d:&#x2F;etc&#x2F;nginx&#x2F;conf.d <br>-v &#x2F;docker-data&#x2F;nginx&#x2F;log:&#x2F;var&#x2F;log&#x2F;nginx -v &#x2F;docker-data&#x2F;nginx&#x2F;ssl:&#x2F;etc&#x2F;nginx&#x2F;ssl&#x2F; <br>-v &#x2F;docker-data&#x2F;nginx&#x2F;html:&#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html <br>-d nginx:latest</p>]]></content>
     
@@ -55,8 +55,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="/project/hello-world.html"/>
-    <url>/project/hello-world.html</url>
+    <link href="/blog/hello-world.html"/>
+    <url>/blog/hello-world.html</url>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
     
