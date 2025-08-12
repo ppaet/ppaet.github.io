@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>Ubuntu 安装 Docker</title>
+    <link href="/Ubuntu-%E5%AE%89%E8%A3%85-Docker.html"/>
+    <url>/Ubuntu-%E5%AE%89%E8%A3%85-Docker.html</url>
+    
+    <content type="html"><![CDATA[<p>在安装 Docker 之前，您需要卸载所有有冲突的软件包  </p><h3 id="运行以下命令来卸载所有冲突的包"><a href="#运行以下命令来卸载所有冲突的包" class="headerlink" title="运行以下命令来卸载所有冲突的包:"></a>运行以下命令来卸载所有冲突的包:</h3><p><code>for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done</code><br>使用apt存储库安装<br>在新的主机上首次安装 Docker 之前，您需要设置 Docker apt存储库。之后，您可以从存储库安装和更新 Docker  </p><h3 id="设置-Docker-的-apt-存储库"><a href="#设置-Docker-的-apt-存储库" class="headerlink" title="设置 Docker 的 apt 存储库"></a>设置 Docker 的 apt 存储库</h3><p>&#96;&#96;<br><code># Add Docker&#39;s official GPG key:</code><br>sudo apt-get update<br>sudo apt-get install ca-certificates curl<br>sudo install -m 0755 -d &#x2F;etc&#x2F;apt&#x2F;keyrings<br>sudo curl -fsSL <a href="https://download.docker.com/linux/ubuntu/gpg">https://download.docker.com/linux/ubuntu/gpg</a> -o &#x2F;etc&#x2F;apt&#x2F;keyrings&#x2F;docker.asc<br>sudo chmod a+r &#x2F;etc&#x2F;apt&#x2F;keyrings&#x2F;docker.asc  </p><p><code># Add the repository to Apt sources:</code><br>echo \<br>  <code>&quot;deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \   $(. /etc/os-release &amp;&amp; echo &quot;$&#123;UBUNTU_CODENAME:-$VERSION_CODENAME&#125;&quot;) stable&quot; | \   sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</code><br>sudo apt-get update&#96;&#96;  </p><h3 id="安装-Docker-包"><a href="#安装-Docker-包" class="headerlink" title="安装 Docker 包"></a>安装 Docker 包</h3><p>sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin  </p><h3 id="通过运行镜像来验证安装是否成功"><a href="#通过运行镜像来验证安装是否成功" class="headerlink" title="通过运行镜像来验证安装是否成功"></a>通过运行镜像来验证安装是否成功</h3><p>sudo docker run hello-world  </p>]]></content>
+    
+    
+    <categories>
+      
+      <category>运维</category>
+      
+      <category>docker</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>docker</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>docker安装redis:6.2.14</title>
     <link href="/docker%E5%AE%89%E8%A3%85redis-6-2-14.html"/>
     <url>/docker%E5%AE%89%E8%A3%85redis-6-2-14.html</url>
@@ -39,7 +66,7 @@
     <link href="/docker%E5%AE%89%E8%A3%85nginx.html"/>
     <url>/docker%E5%AE%89%E8%A3%85nginx.html</url>
     
-    <content type="html"><![CDATA[<p>docker run <br>-p 80:80 -p 443:443 <br>–name nginx <br>-v &#x2F;docker-data&#x2F;nginx&#x2F;conf&#x2F;nginx.conf:&#x2F;etc&#x2F;nginx&#x2F;nginx.conf <br>-v &#x2F;docker-data&#x2F;nginx&#x2F;conf&#x2F;conf.d:&#x2F;etc&#x2F;nginx&#x2F;conf.d <br>-v &#x2F;docker-data&#x2F;nginx&#x2F;log:&#x2F;var&#x2F;log&#x2F;nginx -v &#x2F;docker-data&#x2F;nginx&#x2F;ssl:&#x2F;etc&#x2F;nginx&#x2F;ssl&#x2F; <br>-v &#x2F;docker-data&#x2F;nginx&#x2F;html:&#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html <br>-d nginx:latest</p>]]></content>
+    <content type="html"><![CDATA[<p>docker run <br>-p 80:80 -p 443:443 <br>–name nginx <br>-v &#x2F;docker-data&#x2F;nginx&#x2F;conf&#x2F;nginx.conf:&#x2F;etc&#x2F;nginx&#x2F;nginx.conf <br>-v &#x2F;docker-data&#x2F;nginx&#x2F;conf&#x2F;conf.d:&#x2F;etc&#x2F;nginx&#x2F;conf.d <br>-v &#x2F;docker-data&#x2F;nginx&#x2F;log:&#x2F;var&#x2F;log&#x2F;nginx<br>-v &#x2F;docker-data&#x2F;nginx&#x2F;ssl:&#x2F;etc&#x2F;nginx&#x2F;ssl&#x2F; <br>-v &#x2F;docker-data&#x2F;nginx&#x2F;html:&#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html <br>-d nginx:latest</p>]]></content>
     
     
     <categories>
