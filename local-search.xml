@@ -4,6 +4,37 @@
   
   
   <entry>
+    <title>Docker安装配置RabbitMQ并安装x-delayed-message插件</title>
+    <link href="/Docker%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AERabbitMQ%E5%B9%B6%E5%AE%89%E8%A3%85x-delayed-message%E6%8F%92%E4%BB%B6.html"/>
+    <url>/Docker%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AERabbitMQ%E5%B9%B6%E5%AE%89%E8%A3%85x-delayed-message%E6%8F%92%E4%BB%B6.html</url>
+    
+    <content type="html"><![CDATA[<p>镜像版本号带着management字样代表带有网页管理界面<br>拉取最新版镜像  </p><pre><code class="hljs">docker pull rabbitmq:4.1.2-management  docker run -d --hostname rabbitmq --name rabbitmq --privileged -v /docker-data/rabbitmq:/var/lib/rabbitmq -e RABBITMQ_DEFAULT_USER=admin -e RABBITMQ_DEFAULT_VHOST=my_vhost -e RABBITMQ_DEFAULT_PASS=123456 -p 15672:15672 -p 5672:5672 --restart=always rabbitmq:4.1.2-management  </code></pre><p>安装插件<br><a href="https://github.com/rabbitmq/rabbitmq-delayed-message-exchange/releases">插件下载仓库</a><br>下载插件  </p><pre><code class="hljs">wget https://github.com/rabbitmq/rabbitmq-delayed-message-exchange/releases/download/v4.1.0/rabbitmq_delayed_message_exchange-4.1.0.ez  </code></pre><p>上传插件到容器  </p><pre><code class="hljs">docker cp rabbitmq_delayed_message_exchange-4.1.0.ez rabbitmq:/plugins</code></pre><p>进入容器  </p><pre><code class="hljs">docker exec -it rabbitmq /bin/bash  </code></pre><p>启动插件（注意是插件名称，不是插件文件名）  </p><pre><code class="hljs">rabbitmq-plugins enable rabbitmq_delayed_message_exchange</code></pre><p>退出容器（ctrl + d）<br>重启容器  </p><pre><code class="hljs">docker restart rabbitmq</code></pre><p>在网页管理的exchanges会看到新增的type类型为 x-delayed-message<br>新增交换机<br><img src="/image/%E6%96%B0%E5%A2%9Ex-delayed-message%E4%BA%A4%E6%8D%A2%E6%9C%BA.png" alt="新增交换机"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>运维</category>
+      
+      <category>docker</category>
+      
+      <category>RabbitMQ</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>docker</tag>
+      
+      <tag>RabbitMQ</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>spring允许cors跨域配置</title>
     <link href="/spring%E5%85%81%E8%AE%B8cors%E8%B7%A8%E5%9F%9F%E9%85%8D%E7%BD%AE.html"/>
     <url>/spring%E5%85%81%E8%AE%B8cors%E8%B7%A8%E5%9F%9F%E9%85%8D%E7%BD%AE.html</url>

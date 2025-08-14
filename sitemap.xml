@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.ppaet.top/Docker%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AERabbitMQ%E5%B9%B6%E5%AE%89%E8%A3%85x-delayed-message%E6%8F%92%E4%BB%B6.html</loc>
+    
+    <lastmod>2025-08-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.ppaet.top/spring%E5%85%81%E8%AE%B8cors%E8%B7%A8%E5%9F%9F%E9%85%8D%E7%BD%AE.html</loc>
     
     <lastmod>2025-08-14</lastmod>
@@ -136,6 +145,13 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://blog.ppaet.top/tags/RabbitMQ/</loc>
+    <lastmod>2025-08-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -189,6 +205,13 @@
   
   <url>
     <loc>https://blog.ppaet.top/categories/Java/Spring/</loc>
+    <lastmod>2025-08-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.ppaet.top/categories/docker/RabbitMQ/</loc>
     <lastmod>2025-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

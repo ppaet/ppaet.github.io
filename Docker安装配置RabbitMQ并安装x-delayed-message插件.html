@@ -19,24 +19,25 @@
   <meta name="author" content="ppaet">
   <meta name="keywords" content="">
   
-    <meta name="description" content="创建配置类，要求在spring扫描包路径下   @Configuration public class CorsConfig &#123;      &#x2F;**     * 跨域支持     *&#x2F;     @Bean     public WebMvcConfigurer corsConfigurer() &#123;         return new WebMvcConfigurer() &amp;#1">
+    <meta name="description" content="镜像版本号带着management字样代表带有网页管理界面拉取最新版镜像   docker pull rabbitmq:4.1.2-management    docker run -d --hostname rabbitmq --name rabbitmq --privileged -v &#x2F;docker-data&#x2F;rabbitmq:&#x2F;var&#x2F;lib&#x2F;rabbitmq -e RABBITMQ_DE">
 <meta property="og:type" content="article">
-<meta property="og:title" content="spring允许cors跨域配置">
-<meta property="og:url" content="https://blog.ppaet.top/spring%E5%85%81%E8%AE%B8cors%E8%B7%A8%E5%9F%9F%E9%85%8D%E7%BD%AE.html">
+<meta property="og:title" content="Docker安装配置RabbitMQ并安装x-delayed-message插件">
+<meta property="og:url" content="https://blog.ppaet.top/Docker%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AERabbitMQ%E5%B9%B6%E5%AE%89%E8%A3%85x-delayed-message%E6%8F%92%E4%BB%B6.html">
 <meta property="og:site_name" content="ppaet的个人博客">
-<meta property="og:description" content="创建配置类，要求在spring扫描包路径下   @Configuration public class CorsConfig &#123;      &#x2F;**     * 跨域支持     *&#x2F;     @Bean     public WebMvcConfigurer corsConfigurer() &#123;         return new WebMvcConfigurer() &amp;#1">
+<meta property="og:description" content="镜像版本号带着management字样代表带有网页管理界面拉取最新版镜像   docker pull rabbitmq:4.1.2-management    docker run -d --hostname rabbitmq --name rabbitmq --privileged -v &#x2F;docker-data&#x2F;rabbitmq:&#x2F;var&#x2F;lib&#x2F;rabbitmq -e RABBITMQ_DE">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-08-14T07:05:34.000Z">
-<meta property="article:modified_time" content="2025-08-14T07:12:23.409Z">
+<meta property="og:image" content="https://blog.ppaet.top/image/%E6%96%B0%E5%A2%9Ex-delayed-message%E4%BA%A4%E6%8D%A2%E6%9C%BA.png">
+<meta property="article:published_time" content="2025-08-14T07:46:34.000Z">
+<meta property="article:modified_time" content="2025-08-14T08:02:02.693Z">
 <meta property="article:author" content="ppaet">
-<meta property="article:tag" content="cors">
-<meta property="article:tag" content="spring">
-<meta property="article:tag" content="Java">
+<meta property="article:tag" content="docker">
+<meta property="article:tag" content="RabbitMQ">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://blog.ppaet.top/image/%E6%96%B0%E5%A2%9Ex-delayed-message%E4%BA%A4%E6%8D%A2%E6%9C%BA.png">
   
   
   
-  <title>spring允许cors跨域配置 - ppaet的个人博客</title>
+  <title>Docker安装配置RabbitMQ并安装x-delayed-message插件 - ppaet的个人博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -215,7 +216,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="spring允许cors跨域配置"></span>
+            <span id="subtitle" data-typed-text="Docker安装配置RabbitMQ并安装x-delayed-message插件"></span>
           
         </div>
 
@@ -226,7 +227,7 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-08-14 15:05" pubdate>
+        <time datetime="2025-08-14 15:46" pubdate>
           2025年8月14日 下午
         </time>
       </span>
@@ -238,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          101 字
+          161 字
         
       </span>
     
@@ -249,7 +250,7 @@
         
         
         
-          1 分钟
+          2 分钟
         
       </span>
     
@@ -295,41 +296,32 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">spring允许cors跨域配置</h1>
+            <h1 id="seo-header">Docker安装配置RabbitMQ并安装x-delayed-message插件</h1>
             
             
               <div class="markdown-body">
                 
-                <p>创建配置类，要求在spring扫描包路径下  </p>
-<pre><code class="hljs">@Configuration
-public class CorsConfig &#123;
+                <p>镜像版本号带着management字样代表带有网页管理界面<br>拉取最新版镜像  </p>
+<pre><code class="hljs">docker pull rabbitmq:4.1.2-management  
 
-    /**
-    * 跨域支持
-    */
-    @Bean
-    public WebMvcConfigurer corsConfigurer() &#123;
-        return new WebMvcConfigurer() &#123;
-            @Override
-            public void addCorsMappings(CorsRegistry registry) &#123;
-                registry.addMapping(&quot;/**&quot;)
-                        .allowCredentials(true)
-                        .allowedMethods(&quot;POST&quot;, &quot;GET&quot;, &quot;PUT&quot;, &quot;OPTIONS&quot;, &quot;DELETE&quot;)
-                        .allowedOrigins(&quot;*&quot;);
-            &#125;
-        &#125;;
-    &#125;
-&#125;
+docker run -d --hostname rabbitmq --name rabbitmq --privileged -v /docker-data/rabbitmq:/var/lib/rabbitmq -e RABBITMQ_DEFAULT_USER=admin -e RABBITMQ_DEFAULT_VHOST=my_vhost -e RABBITMQ_DEFAULT_PASS=123456 -p 15672:15672 -p 5672:5672 --restart=always rabbitmq:4.1.2-management  
 </code></pre>
-<p>浏览器在不同的域名下打开控制台</p>
-<pre><code class="hljs">var xhr = new XMLHttpRequest();
-xhr.open(&#39;GET&#39;, &#39;http://请求url&#39;);
-xhr.send(null);
-xhr.onload = function(e) &#123;
-    var xhr = e.target;
-    console.log(xhr.responseText);
-&#125;
+<p>安装插件<br><a target="_blank" rel="noopener" href="https://github.com/rabbitmq/rabbitmq-delayed-message-exchange/releases">插件下载仓库</a><br>下载插件  </p>
+<pre><code class="hljs">wget https://github.com/rabbitmq/rabbitmq-delayed-message-exchange/releases/download/v4.1.0/rabbitmq_delayed_message_exchange-4.1.0.ez  
 </code></pre>
+<p>上传插件到容器  </p>
+<pre><code class="hljs">docker cp rabbitmq_delayed_message_exchange-4.1.0.ez rabbitmq:/plugins
+</code></pre>
+<p>进入容器  </p>
+<pre><code class="hljs">docker exec -it rabbitmq /bin/bash  
+</code></pre>
+<p>启动插件（注意是插件名称，不是插件文件名）  </p>
+<pre><code class="hljs">rabbitmq-plugins enable rabbitmq_delayed_message_exchange
+</code></pre>
+<p>退出容器（ctrl + d）<br>重启容器  </p>
+<pre><code class="hljs">docker restart rabbitmq
+</code></pre>
+<p>在网页管理的exchanges会看到新增的type类型为 x-delayed-message<br>新增交换机<br><img src="/image/%E6%96%B0%E5%A2%9Ex-delayed-message%E4%BA%A4%E6%8D%A2%E6%9C%BA.png" srcset="/img/loading.gif" lazyload alt="新增交换机"></p>
 
                 
               </div>
@@ -348,12 +340,22 @@ xhr.onload = function(e) &#123;
     
       <span class="category-chain">
         
-  <a href="/categories/Java/" class="category-chain-item">Java</a>
+  <a href="/categories/%E8%BF%90%E7%BB%B4/" class="category-chain-item">运维</a>
+  
+  
+
+      </span>
+    
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/docker/" class="category-chain-item">docker</a>
   
   
     <span>></span>
     
-  <a href="/categories/Java/Spring/" class="category-chain-item">Spring</a>
+  <a href="/categories/docker/RabbitMQ/" class="category-chain-item">RabbitMQ</a>
   
   
 
@@ -370,11 +372,9 @@ xhr.onload = function(e) &#123;
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/cors/" class="print-no-link">#cors</a>
+        <a href="/tags/docker/" class="print-no-link">#docker</a>
       
-        <a href="/tags/spring/" class="print-no-link">#spring</a>
-      
-        <a href="/tags/Java/" class="print-no-link">#Java</a>
+        <a href="/tags/RabbitMQ/" class="print-no-link">#RabbitMQ</a>
       
     </div>
   
@@ -386,8 +386,8 @@ xhr.onload = function(e) &#123;
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>spring允许cors跨域配置</div>
-      <div>https://blog.ppaet.top/spring允许cors跨域配置.html</div>
+      <div>Docker安装配置RabbitMQ并安装x-delayed-message插件</div>
+      <div>https://blog.ppaet.top/Docker安装配置RabbitMQ并安装x-delayed-message插件.html</div>
     </div>
     <div class="license-meta">
       
@@ -431,18 +431,12 @@ xhr.onload = function(e) &#123;
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/Docker%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AERabbitMQ%E5%B9%B6%E5%AE%89%E8%A3%85x-delayed-message%E6%8F%92%E4%BB%B6.html" title="Docker安装配置RabbitMQ并安装x-delayed-message插件">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Docker安装配置RabbitMQ并安装x-delayed-message插件</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/VS-Code-%E7%BB%88%E7%AB%AF%E6%97%A0%E6%B3%95%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4-%E6%8A%A5%E9%94%99%EF%BC%9A%E6%97%A0%E6%B3%95%E5%B0%86-%E9%A1%B9%E8%AF%86%E5%88%AB%E4%B8%BA-cmdlet%E3%80%81%E5%87%BD%E6%95%B0%E3%80%81%E8%84%9A%E6%9C%AC%E6%96%87%E4%BB%B6%E6%88%96%E5%8F%AF%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%90%8D%E7%A7%B0.html" title="VS Code 终端无法执行命令, 报错：无法将 项识别为 cmdlet、函数、脚本文件或可运行程序的名称">
-                        <span class="hidden-mobile">VS Code 终端无法执行命令, 报错：无法将 项识别为 cmdlet、函数、脚本文件或可运行程序的名称</span>
+                      <a href="/spring%E5%85%81%E8%AE%B8cors%E8%B7%A8%E5%9F%9F%E9%85%8D%E7%BD%AE.html" title="spring允许cors跨域配置">
+                        <span class="hidden-mobile">spring允许cors跨域配置</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

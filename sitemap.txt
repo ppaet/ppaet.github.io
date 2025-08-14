@@ -1,3 +1,4 @@
+https://blog.ppaet.top/Docker%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AERabbitMQ%E5%B9%B6%E5%AE%89%E8%A3%85x-delayed-message%E6%8F%92%E4%BB%B6.html
 https://blog.ppaet.top/spring%E5%85%81%E8%AE%B8cors%E8%B7%A8%E5%9F%9F%E9%85%8D%E7%BD%AE.html
 https://blog.ppaet.top/VS-Code-%E7%BB%88%E7%AB%AF%E6%97%A0%E6%B3%95%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4-%E6%8A%A5%E9%94%99%EF%BC%9A%E6%97%A0%E6%B3%95%E5%B0%86-%E9%A1%B9%E8%AF%86%E5%88%AB%E4%B8%BA-cmdlet%E3%80%81%E5%87%BD%E6%95%B0%E3%80%81%E8%84%9A%E6%9C%AC%E6%96%87%E4%BB%B6%E6%88%96%E5%8F%AF%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%90%8D%E7%A7%B0.html
 https://blog.ppaet.top/Ubuntu-%E5%AE%89%E8%A3%85-Docker.html
@@ -15,6 +16,7 @@ https://blog.ppaet.top/tags/%E5%BC%80%E5%8F%91/
 https://blog.ppaet.top/tags/cors/
 https://blog.ppaet.top/tags/spring/
 https://blog.ppaet.top/tags/Java/
+https://blog.ppaet.top/tags/RabbitMQ/
 https://blog.ppaet.top/categories/%E8%BF%90%E7%BB%B4/
 https://blog.ppaet.top/categories/docker/
 https://blog.ppaet.top/categories/docker/redis/
@@ -23,3 +25,4 @@ https://blog.ppaet.top/categories/GPG-key/
 https://blog.ppaet.top/categories/%E5%BC%80%E5%8F%91/
 https://blog.ppaet.top/categories/Java/
 https://blog.ppaet.top/categories/Java/Spring/
+https://blog.ppaet.top/categories/docker/RabbitMQ/
