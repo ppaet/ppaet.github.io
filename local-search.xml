@@ -4,6 +4,64 @@
   
   
   <entry>
+    <title>spring允许cors跨域配置</title>
+    <link href="/spring%E5%85%81%E8%AE%B8cors%E8%B7%A8%E5%9F%9F%E9%85%8D%E7%BD%AE.html"/>
+    <url>/spring%E5%85%81%E8%AE%B8cors%E8%B7%A8%E5%9F%9F%E9%85%8D%E7%BD%AE.html</url>
+    
+    <content type="html"><![CDATA[<p>创建配置类，要求在spring扫描包路径下  </p><pre><code class="hljs">@Configurationpublic class CorsConfig &#123;    /**    * 跨域支持    */    @Bean    public WebMvcConfigurer corsConfigurer() &#123;        return new WebMvcConfigurer() &#123;            @Override            public void addCorsMappings(CorsRegistry registry) &#123;                registry.addMapping(&quot;/**&quot;)                        .allowCredentials(true)                        .allowedMethods(&quot;POST&quot;, &quot;GET&quot;, &quot;PUT&quot;, &quot;OPTIONS&quot;, &quot;DELETE&quot;)                        .allowedOrigins(&quot;*&quot;);            &#125;        &#125;;    &#125;&#125;</code></pre><p>浏览器在不同的域名下打开控制台</p><pre><code class="hljs">var xhr = new XMLHttpRequest();xhr.open(&#39;GET&#39;, &#39;http://请求url&#39;);xhr.send(null);xhr.onload = function(e) &#123;    var xhr = e.target;    console.log(xhr.responseText);&#125;</code></pre>]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+      <category>Spring</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>cors</tag>
+      
+      <tag>spring</tag>
+      
+      <tag>Java</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>VS Code 终端无法执行命令, 报错：无法将 项识别为 cmdlet、函数、脚本文件或可运行程序的名称</title>
+    <link href="/VS-Code-%E7%BB%88%E7%AB%AF%E6%97%A0%E6%B3%95%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4-%E6%8A%A5%E9%94%99%EF%BC%9A%E6%97%A0%E6%B3%95%E5%B0%86-%E9%A1%B9%E8%AF%86%E5%88%AB%E4%B8%BA-cmdlet%E3%80%81%E5%87%BD%E6%95%B0%E3%80%81%E8%84%9A%E6%9C%AC%E6%96%87%E4%BB%B6%E6%88%96%E5%8F%AF%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%90%8D%E7%A7%B0.html"/>
+    <url>/VS-Code-%E7%BB%88%E7%AB%AF%E6%97%A0%E6%B3%95%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4-%E6%8A%A5%E9%94%99%EF%BC%9A%E6%97%A0%E6%B3%95%E5%B0%86-%E9%A1%B9%E8%AF%86%E5%88%AB%E4%B8%BA-cmdlet%E3%80%81%E5%87%BD%E6%95%B0%E3%80%81%E8%84%9A%E6%9C%AC%E6%96%87%E4%BB%B6%E6%88%96%E5%8F%AF%E8%BF%90%E8%A1%8C%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%90%8D%E7%A7%B0.html</url>
+    
+    <content type="html"><![CDATA[<p>执行npm install 报错 npm : 无法将“npm”项识别为 cmdlet、函数、脚本文件或可运行程序的名称······<br>解决办法：<br>1、右击VSCode图标，选择以管理员身份运行<br>2、在VSCode终端运行代码<br>get-ExecutionPolicy<br>显示Restricted，表示禁止终端使用命令<br>3、再运行代码<br>set-ExecutionPolicy RemoteSigned<br>4、此时再执行<br>get-ExecutionPolicy<br>显示RemoteSigned，则表示可以使用终端命令了  </p>]]></content>
+    
+    
+    <categories>
+      
+      <category>开发</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>VS-Code</tag>
+      
+      <tag>开发</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>GPG-key</title>
     <link href="/GPG-key.html"/>
     <url>/GPG-key.html</url>
