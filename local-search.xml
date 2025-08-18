@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>Mysql关闭ONLY_FULL_GROUP_BY</title>
+    <link href="/Mysql%E5%85%B3%E9%97%ADONLY-FULL-GROUP-BY.html"/>
+    <url>/Mysql%E5%85%B3%E9%97%ADONLY-FULL-GROUP-BY.html</url>
+    
+    <content type="html"><![CDATA[<p>Mysql禁用ONLY_FULL_GROUP_BY<br>首先找到mysql配置文件位置<br>  <code>mysql --help</code><br>输出中有类似:<br>  <code>Default options are read from the following files in the given order: /etc/my.cnf /etc/mysql/my.cnf /usr/etc/my.cnf ~/.my.cnf</code>  </p><p>在其中任意文件的<code>[mysqld]</code>下添加配置即可  </p><h2 id="mysql5-7"><a href="#mysql5-7" class="headerlink" title="mysql5.7"></a>mysql5.7</h2><p><code>sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION</code>  </p><h2 id="mysql8"><a href="#mysql8" class="headerlink" title="mysql8"></a>mysql8</h2><p><code>sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION</code>  </p><h1 id=""><a href="#" class="headerlink" title=""></a></h1><p>重启mysql<br><code>systemctl restart mysql</code>  </p><p>查看是否生效<br><code>SELECT @@sql_mode;</code>  </p><p>输出中不再包含<code>ONLY_FULL_GROUP_BY</code>  </p>]]></content>
+    
+    
+    <categories>
+      
+      <category>运维</category>
+      
+      <category>mysql</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>mysql</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Docker安装配置RabbitMQ并安装x-delayed-message插件</title>
     <link href="/Docker%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AERabbitMQ%E5%B9%B6%E5%AE%89%E8%A3%85x-delayed-message%E6%8F%92%E4%BB%B6.html"/>
     <url>/Docker%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AERabbitMQ%E5%B9%B6%E5%AE%89%E8%A3%85x-delayed-message%E6%8F%92%E4%BB%B6.html</url>
