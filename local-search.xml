@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>Docker安装ElasticSearch</title>
+    <link href="/Docker%E5%AE%89%E8%A3%85ElasticSearch.html"/>
+    <url>/Docker%E5%AE%89%E8%A3%85ElasticSearch.html</url>
+    
+    <content type="html"><![CDATA[<p>拉取ES镜像  </p><pre><code class="hljs">docker pull elasticsearch:9.2.1  </code></pre><p>安装临时ES容器，用于拷贝挂载文件  </p><pre><code class="hljs">docker run --name es -d -e ES_JAVA_OPTS=&quot;-Xms512m -Xmx512m&quot; -e &quot;discovery.type=single-node&quot; -p 9200:9200 -p 9300:9300 elasticsearch:9.2.1  </code></pre><p>拷贝挂载目录下的文件  </p><pre><code class="hljs">docker cp -a es:/usr/share/elasticsearch/config/ /docker-data/elasticsearch  docker cp -a es:/usr/share/elasticsearch/data/ /docker-data/elasticsearch  docker cp -a es:/usr/share/elasticsearch/logs/ /docker-data/elasticsearch  docker cp -a es:/usr/share/elasticsearch/plugins/ /docker-data/elasticsearch  </code></pre><p>停止es服务，并删除临时容器  </p><pre><code class="hljs">docker stop es  docker rm es  </code></pre><p>编辑配置文件  </p><pre><code class="hljs">vi /docker-data/elasticsearch/config/elasticsearch.yml</code></pre><p>添加  </p><pre><code class="hljs">http.cors.enabled: true  http.cors.allow-origin: &quot;*&quot;  http.cors.allow-headers: Authorization,X-Requested-With,Content-Length,Content-Type  </code></pre><p>修改 </p><pre><code class="hljs">xpack.security.http.ssl:    enabled: false    keystore.path: certs/http.p12  </code></pre><p>创建正式es容器  </p><pre><code class="hljs">docker run -p 9200:9200 -p 9300:9300 \  --privileged=true --name es \  -e &quot;discovery.type=single-node&quot; \  -e ES_JAVA_OPTS=&quot;-Xms256m -Xmx256m&quot; \  -v /docker-data/elasticsearch/plugins:/usr/share/elasticsearch/plugins \  -v /docker-data/elasticsearch/data:/usr/share/elasticsearch/data \  -v /docker-data/elasticsearch/logs:/usr/share/elasticsearch/logs \  -v /docker-data/elasticsearch/config:/usr/share/elasticsearch/config \  -d elasticsearch:9.2.1  </code></pre><p>设置用户名和密码<br>进入容器  </p><pre><code class="hljs">docker exec -it es /bin/bash  </code></pre><p>执行命令输入y开始设置密码，建议六个密码设置成一样的  </p><pre><code class="hljs">bin/elasticsearch-setup-passwords interactive  </code></pre><p>退出容器  </p><pre><code class="hljs">exit</code></pre><p>重启容器  </p><pre><code class="hljs">docker restart es  </code></pre>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Mysql关闭ONLY_FULL_GROUP_BY</title>
     <link href="/Mysql%E5%85%B3%E9%97%ADONLY-FULL-GROUP-BY.html"/>
     <url>/Mysql%E5%85%B3%E9%97%ADONLY-FULL-GROUP-BY.html</url>

@@ -19,22 +19,21 @@
   <meta name="author" content="ppaet">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Mysql禁用ONLY_FULL_GROUP_BY首先找到mysql配置文件位置  mysql --help输出中有类似:Default options are read from the following files in the given order:&#x2F;etc&#x2F;my.cnf &#x2F;etc&#x2F;mysql&#x2F;my.cnf &#x2F;usr&#x2F;etc&#x2F;my.cnf ~&#x2F;.my.cnf   在&#x2F;etc&#x2F;my.cnf">
+    <meta name="description" content="拉取ES镜像   docker pull elasticsearch:9.2.1    安装临时ES容器，用于拷贝挂载文件   docker run --name es -d -e ES_JAVA_OPTS&#x3D;&quot;-Xms512m -Xmx512m&quot; -e &quot;discovery.type&#x3D;single-node&quot; -p 9200:9200 -p 9300:930">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mysql关闭ONLY_FULL_GROUP_BY">
-<meta property="og:url" content="https://ppaet.github.io/Mysql%E5%85%B3%E9%97%ADONLY-FULL-GROUP-BY.html">
+<meta property="og:title" content="Docker安装ElasticSearch">
+<meta property="og:url" content="https://ppaet.github.io/Docker%E5%AE%89%E8%A3%85ElasticSearch.html">
 <meta property="og:site_name" content="ppaet的个人博客">
-<meta property="og:description" content="Mysql禁用ONLY_FULL_GROUP_BY首先找到mysql配置文件位置  mysql --help输出中有类似:Default options are read from the following files in the given order:&#x2F;etc&#x2F;my.cnf &#x2F;etc&#x2F;mysql&#x2F;my.cnf &#x2F;usr&#x2F;etc&#x2F;my.cnf ~&#x2F;.my.cnf   在&#x2F;etc&#x2F;my.cnf">
+<meta property="og:description" content="拉取ES镜像   docker pull elasticsearch:9.2.1    安装临时ES容器，用于拷贝挂载文件   docker run --name es -d -e ES_JAVA_OPTS&#x3D;&quot;-Xms512m -Xmx512m&quot; -e &quot;discovery.type&#x3D;single-node&quot; -p 9200:9200 -p 9300:930">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-08-18T08:20:36.000Z">
-<meta property="article:modified_time" content="2025-08-18T08:36:56.584Z">
+<meta property="article:published_time" content="2025-11-12T03:33:20.000Z">
+<meta property="article:modified_time" content="2025-11-12T03:54:26.708Z">
 <meta property="article:author" content="ppaet">
-<meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Mysql关闭ONLY_FULL_GROUP_BY - ppaet的个人博客</title>
+  <title>Docker安装ElasticSearch - ppaet的个人博客</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -213,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Mysql关闭ONLY_FULL_GROUP_BY"></span>
+            <span id="subtitle" data-typed-text="Docker安装ElasticSearch"></span>
           
         </div>
 
@@ -224,8 +223,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2025-08-18 16:20" pubdate>
-          2025年8月18日 下午
+        <time datetime="2025-11-12 11:33" pubdate>
+          2025年11月12日 中午
         </time>
       </span>
     
@@ -236,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          93 字
+          259 字
         
       </span>
     
@@ -247,7 +246,7 @@
         
         
         
-          1 分钟
+          3 分钟
         
       </span>
     
@@ -293,18 +292,63 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Mysql关闭ONLY_FULL_GROUP_BY</h1>
+            <h1 id="seo-header">Docker安装ElasticSearch</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Mysql禁用ONLY_FULL_GROUP_BY<br>首先找到mysql配置文件位置<br>  <code>mysql --help</code><br>输出中有类似:<br><code>Default options are read from the following files in the given order:</code><br><code>/etc/my.cnf /etc/mysql/my.cnf /usr/etc/my.cnf ~/.my.cnf</code>  </p>
-<p>在<code>/etc/my.cnf /etc/mysql/my.cnf /usr/etc/my.cnf ~/.my.cnf</code>任意文件的<code>[mysqld]</code>下添加以下配置即可  </p>
-<h2 id="mysql5-7"><a href="#mysql5-7" class="headerlink" title="mysql5.7"></a>mysql5.7</h2><p><code>sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION</code>  </p>
-<h2 id="mysql8"><a href="#mysql8" class="headerlink" title="mysql8"></a>mysql8</h2><p><code>sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION</code>  </p>
-<h1 id=""><a href="#" class="headerlink" title=""></a></h1><p>重启mysql<br><code>systemctl restart mysql</code>  </p>
-<p>查看是否生效<br><code>SELECT @@sql_mode;</code>  </p>
-<p>输出中不再包含<code>ONLY_FULL_GROUP_BY</code>  </p>
+                <p>拉取ES镜像  </p>
+<pre><code class="hljs">docker pull elasticsearch:9.2.1  
+</code></pre>
+<p>安装临时ES容器，用于拷贝挂载文件  </p>
+<pre><code class="hljs">docker run --name es -d -e ES_JAVA_OPTS=&quot;-Xms512m -Xmx512m&quot; -e &quot;discovery.type=single-node&quot; -p 9200:9200 -p 9300:9300 elasticsearch:9.2.1  
+</code></pre>
+<p>拷贝挂载目录下的文件  </p>
+<pre><code class="hljs">docker cp -a es:/usr/share/elasticsearch/config/ /docker-data/elasticsearch  
+docker cp -a es:/usr/share/elasticsearch/data/ /docker-data/elasticsearch  
+docker cp -a es:/usr/share/elasticsearch/logs/ /docker-data/elasticsearch  
+docker cp -a es:/usr/share/elasticsearch/plugins/ /docker-data/elasticsearch  
+</code></pre>
+<p>停止es服务，并删除临时容器  </p>
+<pre><code class="hljs">docker stop es  
+docker rm es  
+</code></pre>
+<p>编辑配置文件  </p>
+<pre><code class="hljs">vi /docker-data/elasticsearch/config/elasticsearch.yml
+</code></pre>
+<p>添加  </p>
+<pre><code class="hljs">http.cors.enabled: true  
+http.cors.allow-origin: &quot;*&quot;  
+http.cors.allow-headers: Authorization,X-Requested-With,Content-Length,Content-Type  
+</code></pre>
+<p>修改 </p>
+<pre><code class="hljs">xpack.security.http.ssl:  
+  enabled: false  
+  keystore.path: certs/http.p12  
+</code></pre>
+<p>创建正式es容器  </p>
+<pre><code class="hljs">docker run -p 9200:9200 -p 9300:9300 \  
+--privileged=true --name es \  
+-e &quot;discovery.type=single-node&quot; \  
+-e ES_JAVA_OPTS=&quot;-Xms256m -Xmx256m&quot; \  
+-v /docker-data/elasticsearch/plugins:/usr/share/elasticsearch/plugins \  
+-v /docker-data/elasticsearch/data:/usr/share/elasticsearch/data \  
+-v /docker-data/elasticsearch/logs:/usr/share/elasticsearch/logs \  
+-v /docker-data/elasticsearch/config:/usr/share/elasticsearch/config \  
+-d elasticsearch:9.2.1  
+</code></pre>
+<p>设置用户名和密码<br>进入容器  </p>
+<pre><code class="hljs">docker exec -it es /bin/bash  
+</code></pre>
+<p>执行命令输入y开始设置密码，建议六个密码设置成一样的  </p>
+<pre><code class="hljs">bin/elasticsearch-setup-passwords interactive  
+</code></pre>
+<p>退出容器  </p>
+<pre><code class="hljs">exit
+</code></pre>
+<p>重启容器  </p>
+<pre><code class="hljs">docker restart es  
+</code></pre>
 
                 
               </div>
@@ -313,44 +357,6 @@
             <div>
               <div class="post-metas my-3">
   
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E8%BF%90%E7%BB%B4/" class="category-chain-item">运维</a>
-  
-  
-
-      </span>
-    
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/mysql/" class="category-chain-item">mysql</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/mysql/" class="print-no-link">#mysql</a>
-      
-    </div>
   
 </div>
 
@@ -360,8 +366,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Mysql关闭ONLY_FULL_GROUP_BY</div>
-      <div>https://ppaet.github.io/Mysql关闭ONLY-FULL-GROUP-BY.html</div>
+      <div>Docker安装ElasticSearch</div>
+      <div>https://ppaet.github.io/Docker安装ElasticSearch.html</div>
     </div>
     <div class="license-meta">
       
@@ -373,7 +379,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2025年8月18日</div>
+          <div>2025年11月12日</div>
         </div>
       
       
@@ -405,18 +411,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/Docker%E5%AE%89%E8%A3%85ElasticSearch.html" title="Docker安装ElasticSearch">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Docker安装ElasticSearch</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/Docker%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AERabbitMQ%E5%B9%B6%E5%AE%89%E8%A3%85x-delayed-message%E6%8F%92%E4%BB%B6.html" title="Docker安装配置RabbitMQ并安装x-delayed-message插件">
-                        <span class="hidden-mobile">Docker安装配置RabbitMQ并安装x-delayed-message插件</span>
+                      <a href="/Mysql%E5%85%B3%E9%97%ADONLY-FULL-GROUP-BY.html" title="Mysql关闭ONLY_FULL_GROUP_BY">
+                        <span class="hidden-mobile">Mysql关闭ONLY_FULL_GROUP_BY</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
